@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+
+<style>
+    #first-sec {
+        background-color: yellow;
+        border: 3px solid black;
+        margin: 10px;
+        padding: 5px;
+        width: 400px;
+        border-radius: 10px;
+    }
+
+    #second-sec {
+        background-color: paleturquoise;
+        border: 3px solid black;
+        margin: 10px;
+        padding: 5px;
+        width: 400px;
+        border-radius: 10px;
+    }
+
+
+    #third-sec {
+        background-color: green;
+        border: 3px solid yellow;
+        margin: 10px;
+        padding: 5px;
+        width: 400px;
+        border-radius: 10px;
+    }
+
+    h3 {
+
+        font-style: italic;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+
+<body>
+
+    <h2>Learning HTML Events</h2>
+    <section>
+        <div id='first-sec'>
+            <h3>Click Button 1 to change the background colour of this block..</h3>
+        </div>
+    </section>
+
+    <section>
+        <div id='second-sec'>
+            <h3>Press down key and text will change in this block.</h3>
+        </div>
+    </section>
+
+    <section>
+        <div id='third-sec'>
+            <h3>Bring the mouse on this block to exceute mouse over effect.</h3>
+        </div>
+    </section>
+
+    <button type="button" id="button12">Button 1 !</button>
+
+    <script>
+
+
+        document.getElementById("button12").addEventListener("click", function run() {
+
+            document.getElementById('first-sec').style.background = "blue";
+            document.getElementById('first-sec').innerText = "Background Color Changed Successfully !!";
+
+
+        });
+
+        window.addEventListener("keydown", abc);
+
+        function abc(key) {
+
+            if (key.keyCode == 40) {
+                document.getElementById('second-sec').innerText = "Hello, how are you buddy ?";
+
+            }
+            else {
+                alert("Other Key is Pressed by the user");
+            }
+        }
+
+
+        document.getElementById('third-sec').addEventListener("mouseover", function run2() {
+            document.getElementById('third-sec').style.border = "5px solid red";
+            document.getElementById('third-sec').innerText = "Mouse Over and Mouse Away Effect !!";
+        });
+
+        document.getElementById('third-sec').addEventListener("mouseout", function run3() {
+            document.getElementById('third-sec').style.border = "3px solid yellow";
+            document.getElementById('third-sec').innerText = "Bring the mouse on this block to exceute mouse over effect.";
+        });
+
+    </script>
+
+</body>
+
+</html>
